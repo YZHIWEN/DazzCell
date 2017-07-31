@@ -26,4 +26,7 @@ open class Cell(name: String, view: View) {
 
     open fun onCellStatusReceive(status: String) {}
 
+    fun postToParentCellStatus(status: String) {
+        parentCell?.onCellStatusReceive(status)
+    }
 }

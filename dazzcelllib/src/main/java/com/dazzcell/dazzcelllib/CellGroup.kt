@@ -19,11 +19,12 @@ class CellGroup(name: String, view: View) : Cell(name, view) {
         cell?.parentCell = null
     }
 
-    override fun onCellStatusReceive(status: String) {
-        childCell.iterator().forEach { it -> it.value.onCellStatusReceive(status) }
+    fun dispatchStatusToChildCell(status: String, params: Any) {
+        childCell.iterator().forEach { it -> it.value.onCellStatusReceive(status, params) }
     }
 
     fun postCellStatus(status: String) {
 
     }
+
 }

@@ -24,9 +24,9 @@ open class Cell(name: String, view: View) {
 
     open fun onSaveInstanceState(params: Bundle) {}
 
-    open fun onCellStatusReceive(status: String) {}
+    open fun onCellStatusReceive(status: String, params: Any) {}
 
-    fun postToParentCellStatus(status: String) {
-        parentCell?.onCellStatusReceive(status)
+    fun postToParentCellStatus(status: String, params: Any) {
+        parentCell?.onCellStatusReceive(status, params)
     }
 }
